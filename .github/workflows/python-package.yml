@@ -11,8 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # <-- Este paso es obligatorio
 
-    - name: Install dependencies
+    - name: Set up Python virtual environment
       run: |
         python3 -m venv .venv
         source .venv/bin/activate
