@@ -3,8 +3,6 @@ name: Python package
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
@@ -12,10 +10,15 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3  # <-- Este paso es obligatorio
+      uses: actions/checkout@v3
 
-    - name: Set up Python virtual environment
+    - name: Set up Python 3.11.9
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11.9
+
+    - name: Set up Python virtual environment and install dependencies
       run: |
-        python3 -m venv .venv
+        python -m venv .venv
         source .venv/bin/activate
         pip install -r requirements.txt
