@@ -6,9 +6,16 @@
 ```
 ### 2. Activar entorno virtual
 
+windows (powershell)
 ```
-    .\.venv\Scripts\activate\
+    .\.venv\Scripts\Activate.ps1
 ```
+
+windows (linux)
+```
+    source .venv/bin/activate
+```
+
 
 ### 3. Instalar paquetes
 
